@@ -1,0 +1,21 @@
+Adapter trimming
+  After looking at the fastqc files it was clear that the files could benefit from a trim. This was started by trimming the adapters added by Illumia sequencing.
+  In this case cutadapt was used
+    cutadapt -q 20,20 -a CTGTCTCTTATACACATCTCCGAGCCCACGAGAC -A CTGTCTCTTATACACATCTGACGCTGCCGACGA -m 50 --max-n 0 -o N4_S17_R1_L001.cutadapt.fastq -p N4_S17_R2_L001.cutadapt.fastq N4_S17_R1_L001.fastq.gz N4_S17_R2_L001.fastq.gz
+  Output:   
+    Total read pairs processed:          1,561,466
+  Read 1 with adapter:                  46,717 (3.0%)
+  Read 2 with adapter:                  70,594 (4.5%)
+Pairs that were too short:              11,714 (0.8%)
+Pairs with too many N:                     125 (0.0%)
+Pairs written (passing filters):     1,549,627 (99.2%)
+
+Total basepairs processed:   805,064,333 bp
+  Read 1:   396,364,018 bp
+  Read 2:   408,700,315 bp
+Quality-trimmed:              90,430,679 bp (11.2%)
+  Read 1:     9,226,446 bp
+  Read 2:    81,204,233 bp
+Total written (filtered):    711,031,294 bp (88.3%)
+  Read 1:   385,061,800 bp
+  Read 2:   325,969,494 bp
