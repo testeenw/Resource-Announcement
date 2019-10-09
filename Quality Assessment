@@ -1,0 +1,7 @@
+Quality assesstment using fastqc on files downloaded from the google drive (using gdown command)
+  fastqc N4_S17_R1_L001.fastq.gz
+  fastqc N4_S17_R2_L001.fastq.gz
+R1 throws errors on the per base quality as some of the mean quality scores reads are below 20. Additionally it throws an error regarding per base sequence content as there is disaccordance in basepairing at the beginning and the end of the read
+   It also throws some warnings in regard to GC content and the lenght distribution
+R2 is significantly worse than R1. The per base sequence quality has many average quality scores that fall below 20. It too has a more significant discreptency in the base pairing percentages, both at both ends and also significantly earlier starting at rougthly a 100 basepairs.
+   R2 also includes the same warnings as mentioned in R1. 
