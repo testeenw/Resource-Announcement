@@ -1,1 +1,23 @@
+In order to de novo assble the N4_S17_L001 genome SPAde will be used
+First activate the conda envirionment 
+  conda activate de_novo
+Then run the spades application  
+  spades.py -k 21,51,71,91,111,127 --careful --pe1-1 N4_S17_R1_L001.cutadapt.fastq --pe1-2 N4_S17_R2_L001.cutadapt.fastq -o N4_spades_output
+  k dimers that will be checked is a range from 21 to 127, where 127 is the largest k-mer possible
+  The genome will be assembled carefully, using the cutadapt files created during QC
+  The output will be a directory called N4_spades_output
+Move into the output folder and run quast to quality check
+  quast contigs.fasta -o Quast_contigs
+Move into the Quest_contigs folder to see analysis
+  less report.txt
 
+Table listing the quality statistics of the assembly.
+  Number of contigs: 7487
+  GC content: 52.10%
+  Largest contig: 280799 
+  N50: 7242
+  L50: 456
+  
+Discussion of if this is a high quality assembly.
+  The N50 of 7242 is nto too far from the total number of contigs of 7487. This means that only 245 contigs were needed for set up half the genome. 
+  Additionally the largerst contig is fairly large in size at 280799 bp. However, the entire genome is likely close to 3 million bp, which means that it really only accounts for 10% of the entire genome.
