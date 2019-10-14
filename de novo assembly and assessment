@@ -19,5 +19,7 @@ Table listing the quality statistics of the assembly.
   L50: 456
   
 Discussion of if this is a high quality assembly.
-  The N50 of 7242 is nto too far from the total number of contigs of 7487. This means that only 245 contigs were needed for set up half the genome. 
+  The N50 of 7242 is not too far from the total number of contigs of 7487. This means that only 245 contigs were needed for set up half the genome. 
   Additionally the largerst contig is fairly large in size at 280799 bp. However, the entire genome is likely close to 3 million bp, which means that it really only accounts for 10% of the entire genome.
+  The contig number, however, is very large. Especially in regards to the fact that ideally we would only have 1 contig, while below 200 would be "good". 
+  
