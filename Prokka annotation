@@ -1,0 +1,11 @@
+Activate conda environment (created by "conda create -n annotation prokka augustus")
+  conda activate annotation
+Move into Resource_Announcement folder where the N4_spades_output directory is located
+Copy the contig file that is in the spades output directory into a new directory for prokka annotation
+  mkdir prokka_annotation
+  cp N4_spades_output/contigs.fasta prokka_annotation
+  cd prokka_annotation
+As Prokka doesn't work directly with spades output, the fasta contig needs to be slightly reformated so that the gene names are shorter.
+  awk '/^>/{print ">N4_" ++i; next}{print}' < contigs.fasta > contigs_names.fasta
+Then Prokka needs to be ran 
+  prokka --outdir N4 --prefix N4 contigs_names.fasta
