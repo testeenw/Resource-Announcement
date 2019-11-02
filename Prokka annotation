@@ -9,3 +9,9 @@ As Prokka doesn't work directly with spades output, the fasta contig needs to be
   awk '/^>/{print ">N4_" ++i; next}{print}' < contigs.fasta > contigs_names.fasta
 Then Prokka needs to be ran 
   prokka --outdir N4 --prefix N4 contigs_names.fasta
+
+Some of the Prokka analysese ran:
+  grep -c COG N4.tsv
+    This yielded 7651 COGS
+  grep COG N4.tsv|cut -f6,7|sort|uniq -c|sort -n
+    This showed a large quanity of C4-dicarboxylate TRAP transporter large permease protein DctM
